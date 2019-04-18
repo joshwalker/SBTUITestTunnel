@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-    s.name             = "SBTUITestTunnel"
+    s.name             = "SBTUITestTunnelClient"
     s.version          = "3.2.1"
     s.summary          = "Enable network mocks and more in UI Tests"
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     The tunnel allows to inject data in order to enabale network mocking.
     DESC
 
-    s.homepage         = "https://github.com/Subito-it/SBTUITestTunnel"
+    s.homepage         = "https://github.com/joshwalker/SBTUITestTunnel"
     s.license          = 'Apache License, Version 2.0'
     s.author           = { "Tomas Camin" => "tomas.camin@scmitaly.it" }
     s.source           = { :git => "https://github.com/Subito-it/SBTUITestTunnel.git", :tag => s.version.to_s }
@@ -19,11 +19,6 @@ Pod::Spec.new do |s|
     s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC" }
     s.pod_target_xcconfig = { :prebuild_configuration => 'debug' }
     s.library = 'z'
-
-    s.subspec 'Server' do |server|
-        server.source_files = 'Pod/Server/*.{h,m}', 'Pod/Common/*.{h,m}'
-        server.dependency 'GCDWebServer', '~> 3.0'
-    end
 
     s.subspec 'Client' do |client|
         client.frameworks = 'XCTest'
